@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 public class AnandService extends Service {
     public AnandService() {
@@ -34,6 +35,8 @@ public class AnandService extends Service {
 		mp.release();
 		super.onDestroy();
 	}
+	
+	
 
 	@Override
 	public void onLowMemory() {
@@ -45,10 +48,20 @@ public class AnandService extends Service {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.d("anand service", "got into onStartCommand", null);
 		
-		if(mp.isPlaying()) {
-			mp.seekTo(0);
+		if(intent.hasExtra("Anand")) {
+			System.out.println("has extra 'anand'");
+			if(intent.getStringExtra("Anand").equals("Badri")) {
+				System.out.println("has value 'badri'");
+				MainActivity.playAnandSound(mp);
+		    	Toast toast = Toast.makeText(getApplicationContext(), "You suffer Anand!", 1);
+		    	toast.show();
+			}
 		}
-		mp.start();
+		
+//		if(mp.isPlaying()) {
+//			mp.seekTo(0);
+//		}
+//		mp.start();
 		
 		return super.onStartCommand(intent, flags, startId);
 	}

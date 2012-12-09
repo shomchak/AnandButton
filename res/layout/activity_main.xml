@@ -13,4 +13,14 @@
         android:layout_x="0dp" 
         android:layout_y="0dp" />
 
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent"
+        android:onClick="showPopup"
+        android:src="@drawable/anand_remote_button2" />
+
 </RelativeLayout>

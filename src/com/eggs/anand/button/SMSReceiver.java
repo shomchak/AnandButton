@@ -11,7 +11,7 @@ public class SMSReceiver extends BroadcastReceiver {
     public SMSReceiver() {
     }
     
-    private final String MESSAGE_KEY = "abcd";
+    private final String MESSAGE_KEY = "2o37rfbdvkjsdf512bfjv82nwszms942";
     
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -28,10 +28,12 @@ public class SMSReceiver extends BroadcastReceiver {
 		
 		System.out.println(smsMessage[0].getMessageBody() + ", "+ Integer.toString(messages.length));
 		Intent anandSoundIntent = new Intent(context, AnandService.class);
+		anandSoundIntent.putExtra("Anand", "Badri");
 		if(messages.length == 1) {
 			System.out.println("messages.length = 1");
 			String message = smsMessage[0].getMessageBody();
-			message = message.substring(1, message.length()-1);
+//			message = message.substring(1, message.length()-1);
+			System.out.println("message length: " + message.length());
 			if(message.equals(MESSAGE_KEY)) {
 				System.out.println("the key fit in the hole");
 				context.startService(anandSoundIntent);

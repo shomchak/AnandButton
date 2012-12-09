@@ -1,8 +1,10 @@
 <resources>
-
     <string name="app_name">Anand Button</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Anand Button</string>
-
+	<string name="B">B</string>
+	<string name="Dicks">Dicks</string>
+	<string name="ScottClark">Scott Clark</string>
+	<string name="Eggs">Eggs</string>
 </resources>
